@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Solution github repo](https://github.com/Tomi-pter/pricing-component-toggle.git)
-- Live Site URL: [Live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL here](https://tomi-pricing-toggle.netlify.app/)
 
 ## My process
 
