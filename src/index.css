@@ -1,0 +1,208 @@
+@font-face {
+    font-family: 'MontserratBold';
+    src: url('fonts/MontserratBold.eot');
+    src: url('fonts/MontserratBold.eot') format('embedded-opentype'), url('fonts/MontserratBold.woff2') format('woff2'), url('fonts/MontserratBold.woff') format('woff'), url('fonts/MontserratBold.ttf') format('truetype'), url('fonts/MontserratBold.svg#MontserratBold') format('svg');
+}
+
+:root {
+    --linear-gradient: linear-gradient(hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --very-light-blue: hsl(240, 78%, 98%);
+    --light-grayish-blue: hsl(234, 14%, 74%);
+    --grayish-blue: hsl(233, 13%, 49%);
+    --dark-grayish: hsl(232, 13%, 33%);
+    --font-size: 15px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'MontserratBold';
+}
+
+html {
+    background: url(images/bg-top.svg) top right/20% no-repeat, url(images/bg-bottom.svg) bottom left/20% no-repeat;
+    background-color: var(--very-light-blue);
+    font-size: var(--font-size);
+    color: var(--grayish-blue);
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-frame {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    margin-top: 3.5rem;
+    margin-bottom: 3rem;
+    padding: 1.5rem 2.5rem;
+    background-color: white;
+    border-radius: .5rem;
+    box-shadow: 0 5px 10px hsl(236, 72%, 79%, .5);
+    text-align: center;
+}
+
+.selected {
+    background: var(--linear-gradient);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--very-light-blue);
+}
+
+.card p {
+    border-top: 1px solid var(--light-grayish-blue);
+    padding-top: .75rem;
+    margin: .75rem 0;
+    font-size: .75rem;
+}
+
+p:nth-last-child(2) {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding-bottom: .75rem;
+}
+
+.card h2 {
+    font-size: 1rem;
+}
+
+.card h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    width: 15rem;
+}
+
+.card h3 span {
+    font-size: 4rem;
+    margin-left: .25rem;
+    vertical-align: middle;
+    color: var(--dark-grayish);
+}
+
+.card.selected h3 span {
+    color: var(--very-light-blue);
+}
+
+button {
+    margin-top: 1rem;
+    width: 100%;
+    text-transform: uppercase;
+    padding: .5rem 0;
+    font-size: .75rem;
+    border: none;
+    border-radius: .25rem;
+    box-shadow: 1px 1px 2px hsl(237, 63%, 64%, .5);
+    cursor: pointer;
+    color: var(--very-light-blue);
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+
+
+/*Active states*/
+
+.selected button {
+    background: var(--very-light-blue);
+    color: hsl(237, 63%, 64%, .8);
+    box-shadow: 1px 1px 2px hsl(232, 13%, 33%, .5);
+}
+
+button:hover,
+button:focus {
+    color: hsl(237, 63%, 64%);
+    background: var(--very-light-blue);
+    border: 1px solid hsl(237, 63%, 64%);
+    margin-top: calc(1rem - 2px);
+    outline: none;
+}
+
+.selected button:hover,
+.selected button:focus {
+    color: var(--very-light-blue);
+    background: hsl(237, 63%, 64%);
+    border: 1px solid var(--very-light-blue);
+}
+
+
+/*Toggle checkbox*/
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+    margin: 0 .5rem;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch:hover {
+    opacity: .6;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:focus+.slider {
+    box-shadow: .5px .5px 1px hsl(237, 63%, 64%);
+    opacity: .6;
+}
+
+input.checked+.slider:before {
+    transform: translateX(26px);
+}
+
+
+/*Mobile styles*/
+
+@media screen and (max-width: 1000px) {
+    .card-frame {
+        flex-direction: column;
+        align-items: center;
+        margin: 4rem 0 2rem;
+    }
+    html {
+        background-size: 60%, 50%;
+    }
+    .card {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 90%;
+    }
+    .card h3 {
+        width: auto;
+    }
+}
