@@ -1,5 +1,3 @@
-import Button from "./Button";
-
 function Card(props) {
   const classes = `card ${props.classes}`;
 
@@ -12,7 +10,7 @@ function Card(props) {
       <p>{props.size} </p>
       <p>{props.users} </p>
       <p>{props.send} </p>
-      <Button />
+      <button>Learn More</button>
     </div>
   );
 }
