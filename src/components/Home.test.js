@@ -10,4 +10,7 @@ test("should toggle between annual and monthly", () => {
     fireEvent.click(chkBox);
 
     expect(price[0].textContent).toBe("19.99");
+
+    fireEvent.click(chkBox);
+    expect(price[0].textContent).toBe("199.99");
 });
