@@ -5,7 +5,7 @@ function Card(props) {
     <div className={classes}>
       <h2>{props.plan} </h2>
       <h3>
-        $<span>{props.price}</span>
+        $<span data-testid="basic">{props.price}</span>
       </h3>
       <p>{props.size} </p>
       <p>{props.users} </p>

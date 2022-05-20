@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
+// import Counter from "./Counter";
 
 function Home() {
   const [price, setPrice] = useState({
@@ -49,6 +50,7 @@ function Home() {
               type="checkbox"
               name="pricing"
               id="pricing"
+              data-testid="input"
               className={price.className}
               onClick={updatePrice}
               onKeyUp={(e) => {
@@ -69,6 +71,7 @@ function Home() {
           users="2 Users Allowed"
           send="Send up to 3 GB"
           price={price.basic}
+          data-testid="basic"
         />
         <Card
           classes="selected"
@@ -86,6 +89,7 @@ function Home() {
           price={price.master}
         />
       </div>
+      {/* <Counter /> */}
     </>
   );
 }
